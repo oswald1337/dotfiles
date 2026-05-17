@@ -1,0 +1,11 @@
+.DS_Store
+
+# GitHub CLI auth tokens live here. Keep only gh/config.yml in the repo.
+gh/.config/gh/hosts.yml
+
+# Karabiner creates local backup snapshots.
+karabiner/.config/karabiner/automatic_backups/
+
+# Local machine-only overrides.
+*.local
+*.local.*

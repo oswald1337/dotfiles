@@ -1,0 +1,52 @@
+# Converted from ~/.config/kitty/kitty.conf
+
+# Appearance
+background-opacity = 1.0
+background-blur-radius = 1
+
+# Terminal behavior
+term = xterm-ghostty
+scrollback-limit = 5000
+mouse-hide-while-typing = false
+window-save-state = never
+quit-after-last-window-closed = true
+
+# Font
+font-family = SauceCodePro Nerd Font
+font-size = 12
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+
+# Window
+window-padding-x = 2
+window-padding-y = 2
+window-width = 1200
+window-height = 750
+window-decoration = true
+
+# macOS
+macos-option-as-alt = true
+
+# Splits and windows
+keybind = ctrl+shift+enter=new_window
+keybind = ctrl+shift+e=new_split:right
+keybind = ctrl+shift+o=new_split:down
+
+# Split navigation
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+j=goto_split:down
+keybind = ctrl+shift+k=goto_split:up
+keybind = ctrl+shift+l=goto_split:right
+
+# Tabs
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+right=next_tab
+keybind = ctrl+shift+left=previous_tab
+keybind = ctrl+shift+q=close_tab
+
+# font size
+keybind = ctrl+shift+equal=increase_font_size:3
+keybind = ctrl+shift+minus=decrease_font_size:3
+keybind = ctrl+shift+0=reset_font_size
