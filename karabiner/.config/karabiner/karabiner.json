@@ -109,6 +109,71 @@
                         ]
                     },
                     {
+                        "description": "Remap navigation keys on Keychron Link keyboard",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "is_keyboard": true,
+                                                "product_id": 53296,
+                                                "vendor_id": 13364
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "page_up",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "print_screen" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "is_keyboard": true,
+                                                "product_id": 53296,
+                                                "vendor_id": 13364
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "page_down",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "home" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "is_keyboard": true,
+                                                "product_id": 53296,
+                                                "vendor_id": 13364
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "home",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "end" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Reverse mouse scroll direction",
                         "manipulators": [
                             {
@@ -120,6 +185,15 @@
                 ]
             },
             "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 53296,
+                        "vendor_id": 13364
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true
+                },
                 {
                     "identifiers": {
                         "is_pointing_device": true,
