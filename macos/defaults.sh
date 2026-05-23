@@ -1,24 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "Enabling tap-to-click..."
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Built-in MacBook trackpad
-defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+for script in "${SCRIPT_DIR}"/defaults/*.sh; do
+  "$script"
+done
 
-# Magic Trackpad / Bluetooth trackpads
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-
-# Global tap behavior
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-
-# Login screen tap-to-click, optional
-sudo defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
-sudo defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-sudo defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-
-# Restart preferences daemon
+echo "Restarting macOS preference services..."
 killall cfprefsd || true
+killall SystemUIServer || true
 
 echo "Done. You may need to log out and back in."
-
